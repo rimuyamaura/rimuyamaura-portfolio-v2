@@ -1,14 +1,18 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { createTheme, ThemeProvider, Switch } from '@mui/material';
-import { lightThemeSettings, darkThemeSettings } from './theme/theme';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { useAppSelector } from './store';
+import { getDesignTokens } from './theme/theme';
 import { PageLayout, HomePage, ContactPage } from './pages';
 
 function App() {
-  const lightTheme = useMemo(() => createTheme(lightThemeSettings), []);
-  const darkTheme = useMemo(() => createTheme(darkThemeSettings), []);
+  const { isDarkMode } = useAppSelector((state) => state.userState);
+  const colorMode = isDarkMode ? 'dark' : 'light';
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const theme = useMemo(
+    () => createTheme(getDesignTokens(colorMode)),
+    [colorMode]
+  );
 
   const router = createBrowserRouter([
     {
@@ -28,14 +32,10 @@ function App() {
   ]);
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <RouterProvider router={router} />
-      {/* <Switch
-        checked={isDarkMode}
-        onChange={() => setIsDarkMode((prev) => !prev)}
-      /> */}
     </ThemeProvider>
   );
 }
-
 export default App;
