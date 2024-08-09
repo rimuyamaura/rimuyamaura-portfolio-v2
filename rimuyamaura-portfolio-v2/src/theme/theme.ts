@@ -1,5 +1,4 @@
 import { PaletteMode } from '@mui/material';
-import { light } from '@mui/material/styles/createPalette';
 
 export const tokens = {
   grey: {
@@ -14,16 +13,16 @@ export const tokens = {
     900: '#242427',
   },
   primary: {
-    // light green
-    100: '#d0fcf4',
-    200: '#a0f9e9',
-    300: '#71f5de',
-    400: '#41f2d3',
-    500: '#12efc8',
-    600: '#0ebfa0',
-    700: '#0b8f78',
-    800: '#076050',
-    900: '#043028',
+    // black
+    100: '#f5f5f5',
+    200: '#ebebeb',
+    300: '#dedede',
+    400: '#d1d1d1',
+    500: '#c4c4c4',
+    600: '#a8a8a8',
+    700: '#8c8c8c',
+    800: '#707070',
+    900: '#555555',
   },
   secondary: {
     // yellow green
@@ -64,8 +63,8 @@ export const getDesignTokens = (mode: PaletteMode) => ({
       ? {
           primary: {
             ...tokens.primary,
-            main: tokens.primary[700],
-            light: tokens.primary[500],
+            main: tokens.primary[800],
+            light: tokens.primary[600],
           },
           secondary: {
             ...tokens.secondary,
@@ -84,28 +83,29 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           },
         }
       : {
-          palette: {
-            primary: {
-              ...tokens.primary,
-              main: tokens.primary[700],
-              light: tokens.primary[500],
-            },
-            secondary: {
-              ...tokens.secondary,
-              main: tokens.secondary[500],
-            },
-            tertiary: {
-              ...tokens.tertiary,
-            },
-            grey: {
-              ...tokens.grey,
-              main: tokens.grey[500],
-            },
-            background: {
-              default: tokens.background.black,
-              alt: tokens.background.white,
-            },
+          primary: {
+            ...tokens.primary,
+            main: tokens.primary[700],
+            light: tokens.primary[500],
+          },
+          secondary: {
+            ...tokens.secondary,
+            main: tokens.secondary[500],
+          },
+          tertiary: {
+            ...tokens.tertiary,
+          },
+          grey: {
+            ...tokens.grey,
+            main: tokens.grey[500],
+          },
+          background: {
+            default: tokens.background.black,
+            alt: tokens.background.white,
           },
         }),
+  },
+  typography: {
+    fontFamily: '"Montserrat", "Roboto", "Helvetica", "Arial", sans-serif',
   },
 });

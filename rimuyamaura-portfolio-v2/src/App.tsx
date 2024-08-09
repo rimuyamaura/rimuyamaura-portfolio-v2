@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import { useAppSelector } from './store';
 import { getDesignTokens } from './theme/theme';
 import { PageLayout, HomePage, ContactPage } from './pages';
@@ -33,6 +33,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <RouterProvider router={router} />
     </ThemeProvider>
   );

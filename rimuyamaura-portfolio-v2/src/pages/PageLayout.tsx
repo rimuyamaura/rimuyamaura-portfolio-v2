@@ -1,14 +1,13 @@
 import { Outlet } from 'react-router-dom';
-import { useTheme, Box, CssBaseline } from '@mui/material';
+import { useTheme, Box } from '@mui/material';
 import { motion } from 'framer-motion';
-import { ThemeToggleBox } from '../components';
+import { ThemeToggleBox, EmailTag, SocialsTag } from '../components';
 
 const PageLayout = () => {
   const theme = useTheme();
 
   return (
     <>
-      <CssBaseline />
       <Box
         id='Background'
         sx={{
@@ -27,11 +26,11 @@ const PageLayout = () => {
           sx={{
             height: {
               xs: 'calc(100vh - 50px)',
-              md: 'calc(100vh - 75px)',
+              lg: 'calc(100vh - 75px)',
             },
             width: {
               xs: 'calc(100vw - 50px)',
-              md: 'calc(100vw - 75px)',
+              lg: 'calc(100vw - 75px)',
             },
             border: '1px solid',
             borderColor: theme.palette.background.alt,
@@ -48,6 +47,8 @@ const PageLayout = () => {
           <Outlet />
           SocialsBar Themetoggle Email
           <ThemeToggleBox />
+          <SocialsTag />
+          <EmailTag />
         </Box>
       </Box>
     </>
