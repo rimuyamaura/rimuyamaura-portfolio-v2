@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import { useTheme, Box } from '@mui/material';
 import { motion } from 'framer-motion';
-import { ThemeToggleBox, EmailTag, SocialsTag } from '../components';
+import { ThemeToggleBox, EmailTag, SocialsTag, Header } from '../components';
 
 const PageLayout = () => {
   const theme = useTheme();
@@ -43,7 +43,8 @@ const PageLayout = () => {
           exit={{ opacity: 0 }}
           transition={{ duration: 3 }}
         >
-          ParticleRing Header
+          <Header />
+          ParticleRing
           <Outlet />
           SocialsBar Themetoggle Email
           <ThemeToggleBox />

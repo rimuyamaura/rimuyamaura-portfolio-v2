@@ -1,4 +1,5 @@
-import { Box, Link, Typography } from '@mui/material';
+import React from 'react';
+import { Box, Link, Typography, useTheme } from '@mui/material';
 
 export const socials = [
   {
@@ -19,6 +20,7 @@ export const socials = [
 ];
 
 const SocialsTag = () => {
+  const { palette } = useTheme();
   return (
     <>
       <Box
@@ -37,16 +39,24 @@ const SocialsTag = () => {
           textRendering: 'optimizeLegibility',
         }}
       >
-        <Typography fontSize={{ lg: 'small' }} variant='overline'>
+        <Typography
+          fontSize={{ lg: 'small' }}
+          color={palette.primary.main}
+          variant='overline'
+        >
           SOCIALS
         </Typography>
-        {socials.map((social) => (
-          <>
-            <Typography fontSize={{ lg: 'small' }} variant='overline'>
+        {socials.map((social, i) => (
+          <React.Fragment key={i}>
+            <Typography
+              fontSize={{ lg: 'small' }}
+              color={palette.primary.main}
+              variant='overline'
+            >
               <span style={{ margin: '0 8px' }}>//</span>
             </Typography>
             <Link
-              key={social.name}
+              key={i}
               href={social.url}
               underline='hover'
               target='_blank'
@@ -56,7 +66,7 @@ const SocialsTag = () => {
                 {social.name}
               </Typography>
             </Link>
-          </>
+          </React.Fragment>
         ))}
       </Box>
     </>

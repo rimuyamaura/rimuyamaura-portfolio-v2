@@ -85,7 +85,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
       : {
           primary: {
             ...tokens.primary,
-            main: tokens.primary[700],
+            main: tokens.primary[600],
             light: tokens.primary[500],
           },
           secondary: {
@@ -107,5 +107,9 @@ export const getDesignTokens = (mode: PaletteMode) => ({
   },
   typography: {
     fontFamily: '"Montserrat", "Roboto", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontFamily:
+        '"Libre Barcode 39 Text", "Montserrat", "Roboto", "Helvetica", "Arial", sans-serif',
+    },
   },
 });
