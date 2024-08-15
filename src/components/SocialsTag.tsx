@@ -56,7 +56,6 @@ const SocialsTag = () => {
               <span style={{ margin: '0 8px' }}>//</span>
             </Typography>
             <Link
-              key={i}
               href={social.url}
               underline='hover'
               target='_blank'

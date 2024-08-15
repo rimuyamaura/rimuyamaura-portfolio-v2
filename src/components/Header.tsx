@@ -1,14 +1,16 @@
 import { AppBar, Toolbar, Typography } from '@mui/material';
+import { Navbar } from '.';
 
 const Header = () => {
   return (
-    <AppBar position='static' color='transparent' elevation={0}>
+    <AppBar id='Header' position='static' color='transparent' elevation={0}>
       <Toolbar
         disableGutters
         sx={{
           flexDirection: 'column',
           alignItems: 'start',
           padding: 0,
+          zIndex: 10,
         }}
       >
         <Typography
@@ -32,6 +34,7 @@ const Header = () => {
         >
           Graduate software developer
         </Typography>
+        <Navbar />
       </Toolbar>
     </AppBar>
   );

@@ -10,6 +10,7 @@ const PageLayout = () => {
     <>
       <Box
         id='Background'
+        component={motion.div}
         sx={{
           height: '100vh',
           width: '100vw',
@@ -17,12 +18,16 @@ const PageLayout = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: theme.palette.background.default,
-          transition: 'background-color 1s ease',
+          transition: 'background-color 2s ease-out',
         }}
+        // // Page fade in animation
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // exit={{ opacity: 0 }}
+        // transition={{ duration: 3 }}
       >
         <Box
           id='Frame'
-          component={motion.div}
           sx={{
             height: {
               xs: 'calc(100vh - 50px)',
@@ -34,19 +39,33 @@ const PageLayout = () => {
             },
             border: '1px solid',
             borderColor: theme.palette.background.alt,
-            position: 'fixed',
-            padding: '20px',
-            transition: 'background-color 3s ease',
+            position: 'relative',
+            padding: { xs: '12px', lg: '20px' },
+            // Text color transition
+            transition: 'color 1s ease-out',
+            overflow: 'auto',
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 3 }}
         >
           <Header />
-          ParticleRing
-          <Outlet />
-          SocialsBar Themetoggle Email
+          <Box
+            id='wrapper'
+            sx={{
+              position: 'absolute',
+              bottom: 0,
+              right: 0,
+              width: {
+                xs: 'calc(100vw - 50px)',
+                lg: 'calc(100vw - 75px)',
+              },
+              height: '75%',
+              padding: { xs: '12px', lg: '20px' },
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-end',
+            }}
+          >
+            <Outlet />
+          </Box>
           <ThemeToggleBox />
           <SocialsTag />
           <EmailTag />

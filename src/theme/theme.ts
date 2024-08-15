@@ -86,7 +86,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           primary: {
             ...tokens.primary,
             main: tokens.primary[600],
-            light: tokens.primary[500],
+            light: tokens.primary[900],
           },
           secondary: {
             ...tokens.secondary,
