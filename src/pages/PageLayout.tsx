@@ -1,11 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import { useTheme, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ThemeToggleBox, EmailTag, SocialsTag, Header } from '../components';
 
 const PageLayout = () => {
-  const theme = useTheme();
-
   return (
     <>
       <Box
@@ -17,7 +15,7 @@ const PageLayout = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: theme.palette.background.default,
+          backgroundColor: 'background.default',
           transition: 'background-color 2s ease-out',
         }}
         // // Page fade in animation
@@ -38,7 +36,7 @@ const PageLayout = () => {
               lg: 'calc(100vw - 75px)',
             },
             border: '1px solid',
-            borderColor: theme.palette.background.alt,
+            borderColor: 'background.alt',
             position: 'relative',
             padding: { xs: '12px', lg: '20px' },
             // Text color transition

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Link, Typography, useTheme } from '@mui/material';
+import { Box, Link, Typography } from '@mui/material';
 
 export const socials = [
   {
@@ -20,7 +20,6 @@ export const socials = [
 ];
 
 const SocialsTag = () => {
-  const { palette } = useTheme();
   return (
     <>
       <Box
@@ -41,7 +40,7 @@ const SocialsTag = () => {
       >
         <Typography
           fontSize={{ lg: 'small' }}
-          color={palette.primary.main}
+          color='primary.main'
           variant='overline'
         >
           SOCIALS
@@ -50,7 +49,7 @@ const SocialsTag = () => {
           <React.Fragment key={i}>
             <Typography
               fontSize={{ lg: 'small' }}
-              color={palette.primary.main}
+              color='primary.main'
               variant='overline'
             >
               <span style={{ margin: '0 8px' }}>//</span>

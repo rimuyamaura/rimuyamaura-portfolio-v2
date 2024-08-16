@@ -9,6 +9,7 @@ import {
   ProjectsPage,
   AboutPage,
   ContactPage,
+  ErrorPage,
 } from './pages';
 import { PreLoader } from './components';
 
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <PageLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

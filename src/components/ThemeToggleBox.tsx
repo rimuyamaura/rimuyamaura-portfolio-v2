@@ -46,9 +46,7 @@ const ThemeToggleBox = () => {
                 padding: '0',
                 transform: 'scale(0.8)',
                 '&.Mui-checked': {
-                  color: isDarkMode
-                    ? palette.secondary.main
-                    : palette.secondary[700],
+                  color: palette.secondary[700],
                 },
               }}
             />
@@ -80,9 +78,7 @@ const ThemeToggleBox = () => {
                 padding: '0',
                 transform: 'scale(0.8)',
                 '&.Mui-checked': {
-                  color: isDarkMode
-                    ? palette.secondary.main
-                    : palette.secondary[700],
+                  color: 'secondary.main',
                 },
               }}
             />

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import { Box, Typography, useTheme } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 interface PreLoaderProps {
   loading: boolean;
@@ -8,7 +8,6 @@ interface PreLoaderProps {
 
 const PreLoader = ({ loading }: PreLoaderProps) => {
   const name = useRef<HTMLSpanElement | null>(null);
-  const theme = useTheme();
 
   useEffect(() => {
     if (name.current) {
@@ -34,7 +33,7 @@ const PreLoader = ({ loading }: PreLoaderProps) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: theme.palette.background.default,
+            backgroundColor: 'background.default',
           }}
         >
           <Typography
@@ -61,7 +60,7 @@ const PreLoader = ({ loading }: PreLoaderProps) => {
               component='span'
               fontSize={{ xs: 15, lg: 22 }}
               sx={{
-                color: theme.palette.secondary.main,
+                color: 'secondary.main',
                 paddingLeft: 1,
               }}
             >
