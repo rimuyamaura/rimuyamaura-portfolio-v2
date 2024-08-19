@@ -10,7 +10,6 @@ const Header = () => {
           flexDirection: 'column',
           alignItems: 'start',
           padding: 0,
-          zIndex: 10,
         }}
       >
         <Typography
@@ -18,6 +17,7 @@ const Header = () => {
           sx={{
             fontSize: { xs: '3rem', lg: '8rem' },
             fontFamily: 'Libre Barcode 39 Text',
+            zIndex: 10,
           }}
         >
           Rimu Yamaura
@@ -30,6 +30,7 @@ const Header = () => {
             paddingLeft: { xs: 0, lg: 1 },
             paddingBottom: { xs: 2, lg: 4 },
             letterSpacing: '0.2rem',
+            zIndex: 10,
           }}
         >
           Graduate software developer

@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import { Box, Typography } from '@mui/material';
+import { useAppSelector } from '../store';
 
 interface PreLoaderProps {
   loading: boolean;
 }
 
 const PreLoader = ({ loading }: PreLoaderProps) => {
+  const { isDarkMode } = useAppSelector((state) => state.userState);
   const name = useRef<HTMLSpanElement | null>(null);
 
   useEffect(() => {
@@ -60,7 +62,7 @@ const PreLoader = ({ loading }: PreLoaderProps) => {
               component='span'
               fontSize={{ xs: 15, lg: 22 }}
               sx={{
-                color: 'secondary.main',
+                color: isDarkMode ? 'secondary.main' : 'secondary.700',
                 paddingLeft: 1,
               }}
             >

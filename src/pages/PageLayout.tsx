@@ -1,7 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Box } from '@mui/material';
 import { motion } from 'framer-motion';
-import { ThemeToggleBox, EmailTag, SocialsTag, Header } from '../components';
+import {
+  ThemeToggleBox,
+  EmailTag,
+  SocialsTag,
+  Header,
+  BackgroundAnimation,
+} from '../components';
 
 const PageLayout = () => {
   return (
@@ -44,9 +50,26 @@ const PageLayout = () => {
             overflow: 'auto',
           }}
         >
-          <Header />
           <Box
-            id='wrapper'
+            id='animationWrapper'
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              overflow: 'hidden',
+              PointerEvent: 'none',
+              transition: 'background-color 1s ease-in-out',
+              zIndex: 1,
+            }}
+          >
+            <BackgroundAnimation />
+          </Box>
+          <Header />
+
+          <Box
+            id='outletWrapper'
             sx={{
               position: 'absolute',
               bottom: 0,

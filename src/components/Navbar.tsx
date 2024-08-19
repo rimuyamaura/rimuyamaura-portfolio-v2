@@ -23,6 +23,7 @@ const Navbar = () => {
             width: 'auto',
             paddingLeft: { xs: 0, lg: 1 },
             position: 'relative',
+            zIndex: 10,
           }}
         >
           <RouterLink
