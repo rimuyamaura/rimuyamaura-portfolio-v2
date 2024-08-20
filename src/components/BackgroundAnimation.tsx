@@ -54,7 +54,7 @@ const BackgroundAnimation = () => {
   const RIGHT_COLOR = !isDarkMode ? 'b7ff00' : 'e5e5e5';
 
   return (
-    <Box sx={{ opacity: 0.5 }}>
+    <Box sx={{ opacity: 0.3 }}>
       <Canvas
         camera={{
           position: [10, -7.5, -5],

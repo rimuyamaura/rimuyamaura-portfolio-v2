@@ -1,4 +1,7 @@
 import { Box, Typography } from '@mui/material';
+import { Icons } from '../components';
+import { languages, technologies } from '../components/Icons';
+import profile from '../assets/images/greyscale.png';
 
 const AboutPage = () => {
   return (
@@ -11,7 +14,6 @@ const AboutPage = () => {
         textAlign: 'end',
         width: { xs: '100%', sm: '50%' },
         height: '100%',
-        marginY: '10vh',
         animation: 'fadeInText 0.6s ease-in-out',
         '@keyframes fadeInText': {
           from: { opacity: 0 },
@@ -49,16 +51,16 @@ const AboutPage = () => {
           sx={{
             width: { xs: '100%', lg: '50%' },
             display: 'flex',
-            justifyContent: 'flex-end',
+            flexDirection: 'column',
+            paddingBottom: { xs: '0.5vh', lg: '5vh' },
           }}
         >
           <Typography
             variant='body2'
             sx={{
               fontSize: { xs: '0.7rem', lg: '0.8rem' },
-              lineHeight: '1.5rem',
+              lineHeight: { xs: '1.1rem', lg: '1.5rem' },
               textAlign: 'justify',
-              textAlignLast: 'right',
             }}
           >
             I am a 23-year-old software developer who graduated in May 2024 from
@@ -72,18 +74,71 @@ const AboutPage = () => {
             width: { xs: '100%', lg: '85%' },
             display: 'flex',
             flexDirection: 'column',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+            <Box
+              id='profilePic'
+              component='img'
+              src={profile}
+              sx={{
+                width: '15vh',
+                height: '15vh',
+                marginRight: { xs: '1rem', lg: '2rem' },
+                marginLeft: { xs: '0', lg: '2rem' },
+              }}
+            />
+            <Typography
+              variant='body2'
+              sx={{
+                fontSize: { xs: '0.7rem', lg: '0.8rem' },
+                lineHeight: { xs: '1.1rem', lg: '1.5rem' },
+                textAlign: 'justify',
+                textAlignLast: 'right',
+              }}
+            >
+              Based in Auckland, New Zealand, I am a full-stack developer
+              proficient in languages such as JavaScript, TypeScript and C#.
+              Being fluent in Japanese and English, I enjoy collaborative
+              environments and am seeking for opportunities to build on my skill
+              set.
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            width: { xs: '100%', lg: '85%' },
+            display: 'flex',
+            flexDirection: 'row',
             textAlign: 'left',
           }}
         >
-          <Typography
-            variant='body2'
-            sx={{
-              fontSize: { xs: '0.7rem', lg: '0.8rem' },
-              lineHeight: { xs: '1.5rem', lg: '2rem' },
-            }}
+          <Box
+            sx={{ display: 'flex', flexDirection: 'column', paddingX: '1vh' }}
           >
-            Languages and Technologies:
-          </Typography>
+            <Typography
+              variant='body2'
+              sx={{
+                fontSize: { xs: '0.7rem', lg: '0.8rem' },
+                lineHeight: { xs: '1.5rem', lg: '2rem' },
+              }}
+            >
+              Languages and Technologies:
+            </Typography>
+            <Icons items={languages} />
+          </Box>
+        </Box>
+
+        <Box
+          sx={{
+            width: { xs: '100%', lg: '75%' },
+            display: 'flex',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Icons items={technologies} />
         </Box>
       </Box>
     </Box>
