@@ -1,4 +1,5 @@
-import { Box, Link } from '@mui/material';
+import { motion } from 'framer-motion';
+import { Box, Link, Theme, useMediaQuery, useTheme } from '@mui/material';
 import { IconType } from 'react-icons';
 import {
   SiPython,
@@ -87,21 +88,54 @@ const technologies: Item[] = [
   { title: 'Git', link: 'https://git-scm.com', icon: FaGitAlt },
 ];
 
-const Icons = ({ items }: { items: Item[] }) => (
-  <Box sx={{ display: 'flex', flexDirection: 'row', maxHeight: '5vh' }}>
-    {items.map((item) => (
-      <Link
-        key={item.title}
-        href={item.link}
-        target='_blank'
-        rel='noreferrer'
-        sx={{ margin: '1vh' }}
-      >
-        <item.icon size={20} />
-      </Link>
-    ))}
-  </Box>
-);
+const Icons = ({ items }: { items: Item[] }) => {
+  const isSmallScreen = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down('md')
+  );
+  const { palette } = useTheme();
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+      }}
+    >
+      {items.map((item, i) => (
+        <motion.div
+          key={item.title}
+          initial={{ opacity: 0, color: palette.secondary.main }}
+          animate={{ opacity: 1, color: palette.primary.main }}
+          transition={{
+            duration: 0.5,
+            delay: i * 0.1,
+            ease: 'easeOut',
+          }}
+          style={{
+            color: 'inherit',
+          }}
+        >
+          <Link
+            key={item.title}
+            href={item.link}
+            target='_blank'
+            rel='noreferrer'
+            sx={{
+              margin: { xs: '0.5vh', lg: '1vh' },
+              color: 'inherit',
+              '&:hover': {
+                color: 'primary.light',
+              },
+              transition: 'color 0.3s ease-out',
+            }}
+          >
+            <item.icon size={isSmallScreen ? 15 : 20} />
+          </Link>
+        </motion.div>
+      ))}
+    </Box>
+  );
+};
 
 export default Icons;
 export { languages, technologies };

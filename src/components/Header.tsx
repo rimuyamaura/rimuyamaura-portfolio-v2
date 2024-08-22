@@ -10,6 +10,7 @@ const Header = () => {
           flexDirection: 'column',
           alignItems: 'start',
           padding: 0,
+          overflow: 'hidden',
         }}
       >
         <Typography

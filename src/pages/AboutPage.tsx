@@ -11,15 +11,17 @@ const AboutPage = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
-        textAlign: 'end',
         width: { xs: '100%', sm: '50%' },
         height: '100%',
+        paddingTop: { xs: '5vh', lg: '0' },
         animation: 'fadeInText 0.6s ease-in-out',
         '@keyframes fadeInText': {
           from: { opacity: 0 },
           to: { opacity: 1 },
         },
         zIndex: 5,
+        overflowX: 'hidden',
+        overflowY: 'auto',
       }}
     >
       <Box id='title'>
@@ -49,32 +51,9 @@ const AboutPage = () => {
       >
         <Box
           sx={{
-            width: { xs: '100%', lg: '50%' },
-            display: 'flex',
-            flexDirection: 'column',
-            paddingBottom: { xs: '0.5vh', lg: '5vh' },
-          }}
-        >
-          <Typography
-            variant='body2'
-            sx={{
-              fontSize: { xs: '0.7rem', lg: '0.8rem' },
-              lineHeight: { xs: '1.1rem', lg: '1.5rem' },
-              textAlign: 'justify',
-            }}
-          >
-            I am a 23-year-old software developer who graduated in May 2024 from
-            the University of Auckland with a bachelor's degree in computer
-            science.
-          </Typography>
-        </Box>
-
-        <Box
-          sx={{
             width: { xs: '100%', lg: '85%' },
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'flex-end',
           }}
         >
           <Box sx={{ display: 'flex', flexDirection: 'row' }}>
@@ -83,8 +62,8 @@ const AboutPage = () => {
               component='img'
               src={profile}
               sx={{
-                width: '15vh',
-                height: '15vh',
+                width: { xs: '10vh', lg: '15vh' },
+                height: { xs: '10vh', lg: '15vh' },
                 marginRight: { xs: '1rem', lg: '2rem' },
                 marginLeft: { xs: '0', lg: '2rem' },
               }}
@@ -95,29 +74,40 @@ const AboutPage = () => {
                 fontSize: { xs: '0.7rem', lg: '0.8rem' },
                 lineHeight: { xs: '1.1rem', lg: '1.5rem' },
                 textAlign: 'justify',
-                textAlignLast: 'right',
               }}
             >
-              Based in Auckland, New Zealand, I am a full-stack developer
-              proficient in languages such as JavaScript, TypeScript and C#.
-              Being fluent in Japanese and English, I enjoy collaborative
-              environments and am seeking for opportunities to build on my skill
-              set.
+              I am a 23-year-old software developer who graduated in May 2024
+              from the University of Auckland with a bachelor's degree in
+              computer science.
             </Typography>
           </Box>
         </Box>
 
+        <Box sx={{ width: { xs: '100%', lg: '40%' } }}>
+          <Typography
+            variant='body2'
+            sx={{
+              fontSize: { xs: '0.7rem', lg: '0.8rem' },
+              lineHeight: { xs: '1.1rem', lg: '1.5rem' },
+              textAlign: 'justify',
+              textAlignLast: 'right',
+            }}
+          >
+            Based in Auckland, New Zealand, I am a full-stack developer
+            proficient in languages such as JavaScript, TypeScript and C#. Being
+            fluent in Japanese and English, I enjoy collaborative environments
+            and am seeking for opportunities to build on my skill set.
+          </Typography>
+        </Box>
+
         <Box
           sx={{
-            width: { xs: '100%', lg: '85%' },
+            width: '100%',
             display: 'flex',
-            flexDirection: 'row',
-            textAlign: 'left',
+            flexDirection: 'column',
           }}
         >
-          <Box
-            sx={{ display: 'flex', flexDirection: 'column', paddingX: '1vh' }}
-          >
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <Typography
               variant='body2'
               sx={{
@@ -129,16 +119,10 @@ const AboutPage = () => {
             </Typography>
             <Icons items={languages} />
           </Box>
-        </Box>
 
-        <Box
-          sx={{
-            width: { xs: '100%', lg: '75%' },
-            display: 'flex',
-            justifyContent: 'flex-end',
-          }}
-        >
-          <Icons items={technologies} />
+          <Box>
+            <Icons items={technologies} />
+          </Box>
         </Box>
       </Box>
     </Box>
