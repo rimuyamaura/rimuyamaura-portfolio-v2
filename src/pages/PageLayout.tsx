@@ -24,11 +24,6 @@ const PageLayout = () => {
           backgroundColor: 'background.default',
           transition: 'background-color 2s ease-out',
         }}
-        // // Page fade in animation
-        // initial={{ opacity: 0 }}
-        // animate={{ opacity: 1 }}
-        // exit={{ opacity: 0 }}
-        // transition={{ duration: 3 }}
       >
         <Box
           id='Frame'
@@ -47,7 +42,7 @@ const PageLayout = () => {
             padding: { xs: '12px', lg: '20px' },
             // Text color transition
             transition: 'color 1s ease-out',
-            overflow: 'auto',
+            overflow: 'hidden',
           }}
         >
           <Box
@@ -78,10 +73,10 @@ const PageLayout = () => {
                 xs: 'calc(100vw - 50px)',
                 lg: 'calc(100vw - 75px)',
               },
-              height: '75%',
-              padding: { xs: '12px', lg: '20px' },
+              height: '100%',
               display: 'flex',
               flexDirection: 'column',
+              justifyContent: 'flex-end',
               alignItems: 'flex-end',
             }}
           >

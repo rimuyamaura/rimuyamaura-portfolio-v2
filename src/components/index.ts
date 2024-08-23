@@ -6,3 +6,4 @@ export { default as Navbar } from './Navbar';
 export { default as PreLoader } from './PreLoader';
 export { default as BackgroundAnimation } from './BackgroundAnimation';
 export { default as Icons } from './Icons';
+export { default as ProjectCard } from './ProjectCard';

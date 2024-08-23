@@ -8,9 +8,11 @@ const HomePage = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
+        justifyContent: 'flex-end',
         textAlign: 'end',
-        width: '50%',
-        height: '100%',
+        padding: { xs: '12px', lg: '20px' },
+        width: { xs: '100%', sm: '50%' },
+        height: { xs: 'auto', sm: 'auto' }, // position is adjusted via margin
         marginY: '20vh',
         animation: 'fadeInText 0.6s ease-in-out',
         '@keyframes fadeInText': {

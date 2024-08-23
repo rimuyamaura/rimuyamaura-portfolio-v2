@@ -93,6 +93,7 @@ const Icons = ({ items }: { items: Item[] }) => {
     theme.breakpoints.down('md')
   );
   const { palette } = useTheme();
+
   return (
     <Box
       sx={{

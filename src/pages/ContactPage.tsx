@@ -12,10 +12,11 @@ const ContactPage = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
+        justifyContent: 'flex-end',
         textAlign: 'end',
+        padding: { xs: '12px', lg: '20px' },
         width: { xs: '100%', sm: '50%' },
-        height: '100%',
-        marginY: '3vh',
+        height: { xs: '75%', sm: '85%' },
         animation: 'fadeInText 0.6s ease-in-out',
         '@keyframes fadeInText': {
           from: { opacity: 0 },

@@ -11,9 +11,10 @@ const AboutPage = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-end',
+        justifyContent: 'flex-end',
+        padding: { xs: '12px', lg: '20px' },
         width: { xs: '100%', sm: '50%' },
-        height: '100%',
-        paddingTop: { xs: '5vh', lg: '0' },
+        height: { xs: '75%', sm: '70%' },
         animation: 'fadeInText 0.6s ease-in-out',
         '@keyframes fadeInText': {
           from: { opacity: 0 },
