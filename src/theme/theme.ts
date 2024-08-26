@@ -68,7 +68,8 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           },
           secondary: {
             ...tokens.secondary,
-            main: tokens.secondary[500],
+            main: tokens.secondary[700],
+            light: tokens.secondary[500],
           },
           tertiary: {
             ...tokens.tertiary,
@@ -91,6 +92,7 @@ export const getDesignTokens = (mode: PaletteMode) => ({
           secondary: {
             ...tokens.secondary,
             main: tokens.secondary[500],
+            light: tokens.secondary[900],
           },
           tertiary: {
             ...tokens.tertiary,

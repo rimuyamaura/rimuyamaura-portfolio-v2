@@ -5,7 +5,6 @@ import {
   Theme,
   Typography,
   useMediaQuery,
-  useTheme,
 } from '@mui/material';
 import SquareIcon from '@mui/icons-material/Square';
 import { useAppDispatch, useAppSelector } from '../store';
@@ -13,7 +12,6 @@ import { toggleTheme } from '../features/userSlice';
 
 const ThemeToggleBox = () => {
   const dispatch = useAppDispatch();
-  const { palette } = useTheme();
   const { isDarkMode } = useAppSelector((state) => state.userState);
   const isXsScreen = useMediaQuery((theme: Theme) =>
     theme.breakpoints.down('sm')
@@ -46,7 +44,7 @@ const ThemeToggleBox = () => {
                 padding: '0',
                 transform: 'scale(0.8)',
                 '&.Mui-checked': {
-                  color: palette.secondary[700],
+                  color: 'secondary.main',
                 },
               }}
             />

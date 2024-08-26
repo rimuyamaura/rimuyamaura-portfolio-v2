@@ -1,13 +1,15 @@
+import { useState } from 'react';
+import { Box, Typography, useTheme } from '@mui/material';
+import { motion } from 'framer-motion';
+import { ProjectDrawer } from '.';
 import terramagotchiImg from '../assets/images/terramagotchi.png';
 import socialImg from '../assets/images/social.png';
 import joblogImg from '../assets/images/job-log.png';
 import comfyImg from '../assets/images/comfy.png';
 import portfolioImg from '../assets/images/portfolio.png';
 import musicImg from '../assets/images/music.png';
-import { Box, Link, Typography, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
 
-interface Project {
+export interface Project {
   id: number;
   img: string;
   url: string | null;
@@ -75,48 +77,49 @@ const projects: Project[] = [
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const { palette } = useTheme();
+  const [open, setOpen] = useState(false);
 
   return (
-    <Box
-      component={motion.div}
-      initial={{ opacity: 0, x: 50 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{
-        duration: 0.7,
-        delay: project.id * 0.1,
-        ease: 'easeOut',
-      }}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        width: '100%',
-        height: '15vh',
-        position: 'relative',
-        overflow: 'hidden',
-        textAlign: 'start',
-        marginBottom: '0.5vh',
-      }}
-    >
+    <>
       <Box
+        id='projectCard'
+        component={motion.div}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.7,
+          delay: project.id * 0.1,
+          ease: 'easeOut',
+        }}
+        onClick={() => setOpen(true)}
         sx={{
           display: 'flex',
-          flexDirection: 'column',
+          alignItems: 'center',
           width: '100%',
-          right: 100,
-          zIndex: 1,
+          height: '15vh',
+          position: 'relative',
+          overflow: 'hidden',
+          textAlign: 'start',
+          marginBottom: '0.5vh',
+          cursor: 'pointer',
+          textDecoration: 'none',
+          '&:hover': {
+            textDecoration: 'underline',
+            textDecorationColor: palette.primary.main,
+            // Increase image opacity on card hover
+            '& .imageBackground': {
+              opacity: 0.6,
+            },
+          },
         }}
       >
-        <Link
-          href={project.url}
-          target='_blank'
-          rel='noreferrer'
+        <Box
           sx={{
-            color: 'inherit',
-            textDecoration: 'none',
-            '&:hover': {
-              textDecoration: 'underline',
-              textDecorationColor: palette.primary.main,
-            },
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            right: 100,
+            zIndex: 1,
           }}
         >
           <Typography
@@ -145,19 +148,26 @@ const ProjectCard = ({ project }: { project: Project }) => {
           >
             {project.text}
           </Typography>
-        </Link>
+        </Box>
+        <Box
+          className='imageBackground'
+          sx={{
+            width: '50%',
+            height: '10vh',
+            background: `url(${project.img}) no-repeat top center/cover`,
+            position: 'absolute',
+            right: 0,
+            opacity: 0.3,
+            transition: 'opacity 0.3s ease',
+          }}
+        ></Box>
       </Box>
-      <Box
-        sx={{
-          width: '50%',
-          height: '10vh',
-          background: `url(${project.img}) no-repeat top center/cover`,
-          position: 'absolute',
-          right: 0,
-          opacity: 0.5,
-        }}
-      ></Box>
-    </Box>
+      <ProjectDrawer
+        project={project}
+        open={open}
+        onClose={() => setOpen(false)}
+      />
+    </>
   );
 };
 
