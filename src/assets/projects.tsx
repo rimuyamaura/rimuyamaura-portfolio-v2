@@ -70,7 +70,7 @@ export const projects: Project[] = [
     id: 4,
     img: [portfolio, portfolio2, portfolio3, portfolio4, portfolio5],
     url: 'https://rimuyamaura.netlify.app',
-    github: 'https://github.com/rimuyamaura/rimuyamaura-portfolio',
+    github: 'https://github.com/rimuyamaura/rimuyamaura-portfolio-v2',
     title: 'Portfolio Website v2',
     tech: 'React TS, Redux, MUI, Framer Motion, React Three Fiber',
     description:
