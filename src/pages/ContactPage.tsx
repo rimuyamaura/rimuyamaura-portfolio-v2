@@ -109,6 +109,7 @@ const ContactPage = () => {
           >
             <Link href={ambassadorChallenge} target='_blank' rel='noreferrer'>
               Microsoft Ambassador Challenge: Embark on Azure Mastery
+              Certificate
               <ArrowOutwardIcon fontSize='inherit' />
             </Link>
           </Typography>

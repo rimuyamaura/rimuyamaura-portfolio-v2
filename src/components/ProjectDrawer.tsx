@@ -30,7 +30,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
               justifyContent: 'center',
               backgroundColor: 'background.default',
               paddingX: { xs: '5vw', md: '2vw' },
-              paddingTop: '10vh',
+              // paddingTop: '5vh',
             },
           }}
           PaperProps={{
@@ -119,7 +119,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
               fontSize: { xs: '0.7rem', lg: '0.8rem' },
               lineHeight: { xs: '1.1rem', lg: '1.5rem' },
               textAlign: 'justify',
-              mb: '10vh',
+              mb: '7vh',
             }}
           >
             {project.text}

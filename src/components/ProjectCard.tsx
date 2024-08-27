@@ -16,8 +16,10 @@ export interface Project {
   github: string | null;
   title: string;
   tech: string;
+  description: string;
   text: string;
 }
+
 const projects: Project[] = [
   {
     id: 1,
@@ -25,8 +27,10 @@ const projects: Project[] = [
     url: 'https://terramagotchi-trofik-edition.web.app',
     github: null,
     title: 'Terramagotchi Trofik Edition',
-    tech: 'JavaScript, Google Firebase',
-    text: 'Interactive JavaScript simulation where users can observe the diverse elements within the soil ecosystem.',
+    tech: 'JavaScript, TailwindCSS, Google Firebase',
+    description:
+      'Interactive simulation where users can observe the diverse elements within the soil ecosystem.',
+    text: 'Terramagotchi Trōfik edition is a minimally interactive 2D web application showcasing the intricacies of the elements beneath the soil. Our goal is to educate users by illustrating the interactions among the elements in the soil ecosystem as users can watch how the plants and their root systems develop over time. The application comes in two parts, the main application featuring the 2D canvas, and a remote application accessible through the QR code displayed on the main interface. The remote application provides ways for users to interact with the main application with options such as controlling the weather and changing time.',
   },
   {
     id: 2,
@@ -35,7 +39,8 @@ const projects: Project[] = [
     github: 'https://github.com/rimuyamaura/social-app',
     title: 'Social-App',
     tech: 'React JS, Express.js, MongoDB, Socket.IO',
-    text: 'Social media application with realtime chat. Built using React, Express.js and MongoDB.',
+    description: 'Social media application with a realtime chat.',
+    text: 'Social media website where users can post and follow their friends! along with a realtime chat feature across users. Users can View/Create/Edit/Delete posts, like and comment on posts, follow/unfollow users, and send messages and images to other users. The application is built with React, Express.js, MongoDB, and Socket.IO for the chat feature.',
   },
   {
     id: 3,
@@ -43,8 +48,9 @@ const projects: Project[] = [
     url: 'https://job-log-fndaada8cth3f8bh.australiacentral-01.azurewebsites.net/',
     github: 'https://github.com/rimuyamaura/job-log',
     title: 'Job-Log',
-    tech: 'React TS, .NET, Azure',
-    text: 'React Typescript and .NET app for tracking and displaying job application statistics.',
+    tech: 'React TS, MUI, .NET Core, Azure',
+    description: 'Job Application tracker.',
+    text: 'A job application tracking website designed to help users save and monitor their job application progress throughout their job search journey! Users are able to login to view, create, edit, and delete their job applications along with the ability to sort by status and view statistics for their own applications.',
   },
   {
     id: 4,
@@ -52,8 +58,9 @@ const projects: Project[] = [
     url: 'https://ry-comfy-store.netlify.app',
     github: 'https://github.com/rimuyamaura/comfy-store',
     title: 'Comfy Store',
-    tech: 'React JS, TailwindCSS, DaisyUI',
-    text: 'Webpage with online store functionalities. Constructed via React with Tailwindcss using provided api.',
+    tech: 'React JS, TailwindCSS',
+    description: 'Furniture shopping website',
+    text: 'A mock website with online shopping functionalities for furniture and beds. Connecting to the provided Comfy Store custom api server to fetch and store data. Browse, search, filter through products and register as a user to add products to cart and checkout.',
   },
   {
     id: 5,
@@ -61,7 +68,8 @@ const projects: Project[] = [
     url: 'https://rimuyamaura.netlify.app',
     github: 'https://github.com/rimuyamaura/rimuyamaura-portfolio',
     title: 'Portfolio Website',
-    tech: '',
+    tech: 'React JS, DaisyUI',
+    description: 'Personal portfolio website.',
     text: 'My personal portfolio website. Built with React and DaisyUI.',
   },
   {
@@ -70,7 +78,8 @@ const projects: Project[] = [
     url: null,
     github: 'https://github.com/rimuyamaura/music-library',
     title: 'Music Library',
-    tech: 'Python, Flask, SQLalchemy',
+    tech: 'Flask, SQLalchemy',
+    description: 'Music library.',
     text: "Flask app where you can view and organize tracks from a library of music. Allowing CRUD operations on the user's collection.",
   },
 ];
@@ -108,7 +117,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             textDecorationColor: palette.primary.main,
             // Increase image opacity on card hover
             '& .imageBackground': {
-              opacity: 0.6,
+              opacity: 0.7,
             },
           },
         }}
@@ -146,7 +155,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
               fontSize: { xs: '0.6rem', fontWeight: '500', lg: '0.75rem' },
             }}
           >
-            {project.text}
+            {project.description}
           </Typography>
         </Box>
         <Box

@@ -1,6 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import {
+  CssBaseline,
+  ThemeProvider,
+  createTheme,
+  GlobalStyles,
+} from '@mui/material';
 import { useAppSelector } from './store';
 import { getDesignTokens } from './theme/theme';
 import {
@@ -61,6 +66,24 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+        <GlobalStyles
+          styles={{
+            '::-webkit-scrollbar': {
+              width: '8px',
+              transition: 'background 1s ease-out',
+            },
+            '::-webkit-scrollbar-track': {
+              opacity: 0, // Use opacity to hide scrollbar track, color transition didn't work for track
+            },
+            '::-webkit-scrollbar-thumb': {
+              background: theme.palette.primary.main,
+              borderRadius: '10px',
+            },
+            '::-webkit-scrollbar-thumb:hover': {
+              background: theme.palette.primary.light,
+            },
+          }}
+        />
         <CssBaseline />
         <PreLoader loading={loading} />
         {!loading && <RouterProvider router={router} />}

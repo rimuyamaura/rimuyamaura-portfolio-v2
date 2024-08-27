@@ -32,7 +32,6 @@ const AboutPage = () => {
             fontSize: { xs: '1rem', lg: '2rem' },
             textTransform: 'uppercase',
             letterSpacing: '1rem',
-            overflow: 'hidden',
           }}
         >
           About
@@ -95,9 +94,10 @@ const AboutPage = () => {
             }}
           >
             Based in Auckland, New Zealand, I am a full-stack developer
-            proficient in languages such as JavaScript, TypeScript and C#. Being
-            fluent in Japanese and English, I enjoy collaborative environments
-            and am seeking for opportunities to build on my skill set.
+            proficient in languages such as JavaScript, TypeScript, Python and
+            C#. Being fluent in Japanese and English, I enjoy collaborative
+            environments and am seeking for opportunities to connect and work on
+            innovative projects.
           </Typography>
         </Box>
 
