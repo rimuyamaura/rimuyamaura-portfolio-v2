@@ -1,9 +1,12 @@
 import { Drawer, Box, Typography, Link, IconButton } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Project } from '../assets/projects';
 import CloseIcon from '@mui/icons-material/Close';
-import { Project } from './ProjectCard';
 import { FiExternalLink } from 'react-icons/fi';
 import { FaGithubSquare } from 'react-icons/fa';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import { useState } from 'react';
 
 interface ProjectDrawerProps {
   open: boolean;
@@ -12,7 +15,20 @@ interface ProjectDrawerProps {
 }
 
 const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   if (!project) return null;
+
+  // Handle image navigation
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % project.img.length);
+  };
+
+  const prevImage = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + project.img.length) % project.img.length
+    );
+  };
 
   return (
     <AnimatePresence>
@@ -98,7 +114,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
           >
             <Box
               component='img'
-              src={project.img}
+              src={project.img[currentIndex]}
               alt={project.title}
               sx={{
                 position: 'absolute',
@@ -111,6 +127,42 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
                 borderColor: 'primary.light',
               }}
             />
+
+            {/* Navigation buttons */}
+            {project.img.length > 1 && (
+              <>
+                <IconButton
+                  onClick={prevImage}
+                  sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '10px',
+                    zIndex: 1,
+                    color: 'primary.main',
+                    '&:hover': {
+                      color: 'secondary.main',
+                    },
+                  }}
+                >
+                  <ArrowBackIosNewIcon />
+                </IconButton>
+                <IconButton
+                  onClick={nextImage}
+                  sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    right: '10px',
+                    zIndex: 1,
+                    color: 'primary.main',
+                    '&:hover': {
+                      color: 'secondary.main',
+                    },
+                  }}
+                >
+                  <ArrowForwardIosIcon />
+                </IconButton>
+              </>
+            )}
           </Box>
 
           <Typography

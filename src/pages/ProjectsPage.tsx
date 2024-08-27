@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { ProjectCard } from '../components';
-import { projects } from '../components/ProjectCard';
+import { projects } from '../assets/projects';
 
 const ProjectsPage = () => {
   return (

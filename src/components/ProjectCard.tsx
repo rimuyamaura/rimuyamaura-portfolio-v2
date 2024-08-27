@@ -2,87 +2,7 @@ import { useState } from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
 import { ProjectDrawer } from '.';
-import terramagotchiImg from '../assets/images/terramagotchi.png';
-import socialImg from '../assets/images/social.png';
-import joblogImg from '../assets/images/job-log.png';
-import comfyImg from '../assets/images/comfy.png';
-import portfolioImg from '../assets/images/portfolio.png';
-import musicImg from '../assets/images/music.png';
-
-export interface Project {
-  id: number;
-  img: string;
-  url: string | null;
-  github: string | null;
-  title: string;
-  tech: string;
-  description: string;
-  text: string;
-}
-
-const projects: Project[] = [
-  {
-    id: 1,
-    img: terramagotchiImg,
-    url: 'https://terramagotchi-trofik-edition.web.app',
-    github: null,
-    title: 'Terramagotchi Trofik Edition',
-    tech: 'JavaScript, TailwindCSS, Google Firebase',
-    description:
-      'Interactive simulation where users can observe the diverse elements within the soil ecosystem.',
-    text: 'Terramagotchi Trōfik edition is a minimally interactive 2D web application showcasing the intricacies of the elements beneath the soil. Our goal is to educate users by illustrating the interactions among the elements in the soil ecosystem as users can watch how the plants and their root systems develop over time. The application comes in two parts, the main application featuring the 2D canvas, and a remote application accessible through the QR code displayed on the main interface. The remote application provides ways for users to interact with the main application with options such as controlling the weather and changing time.',
-  },
-  {
-    id: 2,
-    img: socialImg,
-    url: 'https://social-app-b8kg.onrender.com',
-    github: 'https://github.com/rimuyamaura/social-app',
-    title: 'Social-App',
-    tech: 'React JS, Express.js, MongoDB, Socket.IO',
-    description: 'Social media application with a realtime chat.',
-    text: 'Social media website where users can post and follow their friends! along with a realtime chat feature across users. Users can View/Create/Edit/Delete posts, like and comment on posts, follow/unfollow users, and send messages and images to other users. The application is built with React, Express.js, MongoDB, and Socket.IO for the chat feature.',
-  },
-  {
-    id: 3,
-    img: joblogImg,
-    url: 'https://job-log-fndaada8cth3f8bh.australiacentral-01.azurewebsites.net/',
-    github: 'https://github.com/rimuyamaura/job-log',
-    title: 'Job-Log',
-    tech: 'React TS, MUI, .NET Core, Azure',
-    description: 'Job Application tracker.',
-    text: 'A job application tracking website designed to help users save and monitor their job application progress throughout their job search journey! Users are able to login to view, create, edit, and delete their job applications along with the ability to sort by status and view statistics for their own applications.',
-  },
-  {
-    id: 4,
-    img: comfyImg,
-    url: 'https://ry-comfy-store.netlify.app',
-    github: 'https://github.com/rimuyamaura/comfy-store',
-    title: 'Comfy Store',
-    tech: 'React JS, TailwindCSS',
-    description: 'Furniture shopping website',
-    text: 'A mock website with online shopping functionalities for furniture and beds. Connecting to the provided Comfy Store custom api server to fetch and store data. Browse, search, filter through products and register as a user to add products to cart and checkout.',
-  },
-  {
-    id: 5,
-    img: portfolioImg,
-    url: 'https://rimuyamaura.netlify.app',
-    github: 'https://github.com/rimuyamaura/rimuyamaura-portfolio',
-    title: 'Portfolio Website',
-    tech: 'React JS, DaisyUI',
-    description: 'Personal portfolio website.',
-    text: 'My personal portfolio website. Built with React and DaisyUI.',
-  },
-  {
-    id: 6,
-    img: musicImg,
-    url: null,
-    github: 'https://github.com/rimuyamaura/music-library',
-    title: 'Music Library',
-    tech: 'Flask, SQLalchemy',
-    description: 'Music library.',
-    text: "Flask app where you can view and organize tracks from a library of music. Allowing CRUD operations on the user's collection.",
-  },
-];
+import { Project } from '../assets/projects';
 
 const ProjectCard = ({ project }: { project: Project }) => {
   const { palette } = useTheme();
@@ -163,7 +83,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           sx={{
             width: '50%',
             height: '10vh',
-            background: `url(${project.img}) no-repeat top center/cover`,
+            background: `url(${project.img[0]}) no-repeat top center/cover`,
             position: 'absolute',
             right: 0,
             opacity: 0.3,
@@ -181,4 +101,3 @@ const ProjectCard = ({ project }: { project: Project }) => {
 };
 
 export default ProjectCard;
-export { projects };
