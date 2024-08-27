@@ -100,7 +100,7 @@ export const projects: Project[] = [
   {
     id: 7,
     img: [oldPortfolio, oldPortfolio2],
-    url: null,
+    url: 'https://rimuyamaura-v1.netlify.app',
     github: 'https://github.com/rimuyamaura/rimuyamaura-portfolio',
     title: 'Portfolio Website',
     tech: 'React JS, Redux, DaisyUI, TailwindCSS, React Three Fiber',
