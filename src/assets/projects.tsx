@@ -22,6 +22,9 @@ import portfolio5 from '../assets/images/portfolio-contact.png';
 import oldPortfolio from '../assets/images/oldPortfolio.png';
 import oldPortfolio2 from '../assets/images/oldPortfolio-light.png';
 import music from '../assets/images/music.png';
+import mailtrap from '../assets/images/mailtrap-dashboard.png';
+import mailtrap2 from '../assets/images/mailtrap-signup.png';
+import mailtrap3 from '../assets/images/mailtrap-verify.png';
 
 export interface Project {
   id: number;
@@ -99,6 +102,17 @@ export const projects: Project[] = [
   },
   {
     id: 7,
+    img: [mailtrap, mailtrap2, mailtrap3],
+    url: null,
+    github: 'https://github.com/rimuyamaura/mailtrap-auth',
+    title: 'Mailtrap Auth',
+    tech: 'React JS, Node JS, Express JS, MongoDB, Mailtrap API',
+    description:
+      'Practice app for email delivery and authtication using Mailtrap',
+    text: 'Email authentication practice using mailtrap. Users can register to receive an email containing a verification code which is then inputted into the site for access to the dashboard. Password reset is also done via an email where users can enter their email associated with their account to get a change password link. **This app is using the Mailtrap free tier and demo domain which only allows emails to be sent to yourself.',
+  },
+  {
+    id: 8,
     img: [oldPortfolio, oldPortfolio2],
     url: 'https://rimuyamaura-v1.netlify.app',
     github: 'https://github.com/rimuyamaura/rimuyamaura-portfolio',
