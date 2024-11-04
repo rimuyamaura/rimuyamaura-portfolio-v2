@@ -25,7 +25,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           display: 'flex',
           alignItems: 'center',
           width: '100%',
-          height: '15vh',
+          // height: '15vh',
+          height: '125px',
           position: 'relative',
           overflow: 'hidden',
           textAlign: 'start',
@@ -51,24 +52,32 @@ const ProjectCard = ({ project }: { project: Project }) => {
             zIndex: 1,
           }}
         >
-          <Typography
-            sx={{
-              fontSize: { xs: '1rem', lg: '2rem' },
-              paddingBottom: '1vh',
-            }}
+          <Box
+            sx={{ display: 'flex', alignItems: 'center', overflow: 'hidden' }}
           >
-            {project.title}
+            <Typography
+              sx={{
+                fontSize: { xs: '1rem', lg: '2rem' },
+                paddingBottom: '1vh',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {project.title}
+            </Typography>
             <Typography
               variant='caption'
               sx={{
                 fontSize: { xs: '0.55rem', lg: '0.75rem' },
                 fontWeight: '500',
                 marginLeft: { xs: '0.5rem', lg: '1rem' },
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
               }}
             >
               {project.tech}
             </Typography>
-          </Typography>
+          </Box>
           <Typography
             variant='body2'
             sx={{

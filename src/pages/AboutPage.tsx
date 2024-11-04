@@ -21,8 +21,8 @@ const AboutPage = () => {
           to: { opacity: 1 },
         },
         zIndex: 5,
-        overflowX: 'hidden',
-        overflowY: 'auto',
+        // overflowX: 'hidden',
+        // overflowY: 'auto',
       }}
     >
       <Box id='title'>
