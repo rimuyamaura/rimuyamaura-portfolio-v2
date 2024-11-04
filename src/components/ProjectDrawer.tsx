@@ -43,10 +43,12 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
               height: '100%',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'space-between',
               backgroundColor: 'background.default',
               paddingX: { xs: '5vw', md: '2vw' },
-              // paddingTop: '5vh',
+              paddingTop: '10vh',
+              paddingBottom: '5vh',
+              overflowY: 'auto',
             },
           }}
           PaperProps={{
@@ -64,44 +66,45 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
             },
           }}
         >
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Typography
-              variant='h4'
-              sx={{
-                fontSize: { xs: '1rem', lg: '2rem' },
-                textTransform: 'uppercase',
-                letterSpacing: '0.5rem',
-                overflow: 'hidden',
-              }}
-            >
-              {project.title}
-            </Typography>
-            <IconButton
-              onClick={onClose}
-              sx={{
-                backgroundColor: 'transparent',
-                '&:hover': {
-                  color: 'red',
+          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Typography
+                variant='h4'
+                sx={{
+                  fontSize: { xs: '1rem', lg: '2rem' },
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5rem',
+                  overflow: 'hidden',
+                }}
+              >
+                {project.title}
+              </Typography>
+              <IconButton
+                onClick={onClose}
+                sx={{
                   backgroundColor: 'transparent',
-                },
-                transition: 'color 0.3s ease-out',
+                  '&:hover': {
+                    color: 'red',
+                    backgroundColor: 'transparent',
+                  },
+                  transition: 'color 0.3s ease-out',
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+            </Box>
+            <Typography
+              variant='button'
+              sx={{
+                fontSize: { xs: '0.5rem', lg: '0.9rem' },
+                textTransform: 'uppercase',
+                color: 'primary.main',
+                paddingY: '2vh',
               }}
             >
-              <CloseIcon />
-            </IconButton>
+              {project.tech}
+            </Typography>
           </Box>
-
-          <Typography
-            variant='button'
-            sx={{
-              fontSize: { xs: '0.5rem', lg: '0.9rem' },
-              textTransform: 'uppercase',
-              color: 'primary.main',
-              marginY: '2vh',
-            }}
-          >
-            {project.tech}
-          </Typography>
 
           <Box
             sx={{
@@ -109,7 +112,6 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
               // Use padding-bottom to maintain aspect ratio as all images are 16:9
               position: 'relative',
               paddingBottom: '56.25%', // calc 9 / 16 * 100
-              marginBottom: '5vh',
             }}
           >
             <Box
@@ -168,19 +170,22 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
           <Typography
             variant='body2'
             sx={{
+              height: { sx: '50vh', sm: '15vh' },
               fontSize: { xs: '0.7rem', lg: '0.8rem' },
               lineHeight: { xs: '1.1rem', lg: '1.5rem' },
               textAlign: 'justify',
-              mb: '7vh',
+              textOverflow: 'ellipsis',
+              overflowY: 'auto',
             }}
           >
             {project.text}
           </Typography>
 
+          {/* Links */}
           <Box
             sx={{
               display: 'flex',
-              justifyContent: 'flex-end',
+              justifyContent: 'center',
               alignItems: 'center',
               fontSize: { xs: '1.2rem', lg: '1.5rem' },
             }}
@@ -191,7 +196,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
                 textTransform: 'uppercase',
                 letterSpacing: '0.1rem',
                 color: 'primary.main',
-                marginBottom: '2px',
+                paddingBottom: '3px', // Line label up with icons
               }}
             >
               {project.url ? 'Visit Website ' : 'Visit Repository '}
@@ -199,7 +204,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
                 component='span'
                 sx={{
                   fontSize: { xs: '0.7rem', lg: '0.8rem' },
-                  marginX: { xs: '0.5vh', lg: '1vh' },
+                  paddingX: { xs: '0.5vh', lg: '1vh' },
                 }}
               >
                 //
@@ -211,7 +216,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
                 target='_blank'
                 rel='noreferrer'
                 sx={{
-                  marginX: { xs: '0.5vh', lg: '1vh' },
+                  paddingX: { xs: '0.5vh', lg: '1vh' },
                   color: 'secondary.main',
                   '&:hover': {
                     color: 'secondary.light',
@@ -228,7 +233,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
                 target='_blank'
                 rel='noreferrer'
                 sx={{
-                  marginX: { xs: '0.5vh', lg: '1vh' },
+                  paddingX: { xs: '0.5vh', lg: '1vh' },
                   color: 'inherit',
                   '&:hover': {
                     color: 'primary.light',
