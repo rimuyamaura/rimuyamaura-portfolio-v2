@@ -7,6 +7,7 @@ import { FaGithubSquare } from 'react-icons/fa';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useState } from 'react';
+import { useTheme } from '@mui/material/styles';
 
 interface ProjectDrawerProps {
   open: boolean;
@@ -16,6 +17,7 @@ interface ProjectDrawerProps {
 
 const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const theme = useTheme();
 
   if (!project) return null;
 
@@ -67,7 +69,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
           }}
         >
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Box sx={{ display: 'flex' }}>
               <Typography
                 variant='h4'
                 sx={{
@@ -140,7 +142,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
                     top: '50%',
                     left: '10px',
                     zIndex: 1,
-                    color: 'primary.main',
+                    color: theme.palette.tertiary[100],
                     '&:hover': {
                       color: 'secondary.main',
                     },
@@ -155,7 +157,7 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
                     top: '50%',
                     right: '10px',
                     zIndex: 1,
-                    color: 'primary.main',
+                    color: theme.palette.tertiary[100],
                     '&:hover': {
                       color: 'secondary.main',
                     },
@@ -181,7 +183,6 @@ const ProjectDrawer = ({ open, onClose, project }: ProjectDrawerProps) => {
             {project.text}
           </Typography>
 
-          {/* Links */}
           <Box
             sx={{
               display: 'flex',
