@@ -25,6 +25,7 @@ import music from '../assets/images/music.png';
 import mailtrap from '../assets/images/mailtrap-dashboard.png';
 import mailtrap2 from '../assets/images/mailtrap-signup.png';
 import mailtrap3 from '../assets/images/mailtrap-verify.png';
+import stripesimplified from '../assets/images/stripe-simplified.png';
 
 export interface Project {
   id: number;
@@ -82,6 +83,16 @@ export const projects: Project[] = [
   },
   {
     id: 5,
+    img: [stripesimplified],
+    url: 'https://stripe-simplified.vercel.app/',
+    github: 'https://github.com/rimuyamaura/stripe-simplified',
+    title: 'Stripe Simplified',
+    tech: 'Next.JS, Clerk, Convex, Stripe, Resend',
+    description: 'Online course subscription website.',
+    text: 'Next.js web app to model online course purchases and subscriptions. Note that this is a mock website so products are in name only and purchases will not go through. Email notifications will not be enabled for the deployed application as I do not own a domain.',
+  },
+  {
+    id: 6,
     img: [comfy],
     url: 'https://ry-comfy-store.netlify.app',
     github: 'https://github.com/rimuyamaura/comfy-store',
@@ -91,7 +102,7 @@ export const projects: Project[] = [
     text: 'A mock website with online shopping functionalities for furniture and beds. Connecting to the provided Comfy Store custom api server to fetch and store data. Browse, search, filter through products and register as a user to add products to cart and checkout.',
   },
   {
-    id: 6,
+    id: 7,
     img: [music],
     url: null,
     github: 'https://github.com/rimuyamaura/music-library',
@@ -101,7 +112,7 @@ export const projects: Project[] = [
     text: "A full-stack Flask app where you can view and organize tracks from a library of music. Songs are searchable by artist, album, or genre. Users can favourite songs, add tracks to their playlist, view/like other user's playlists, and get recommended songs based on their liked songs.  The app is built using Flask and the SQLAlchemy ORM with an SQLite database. The app is styled with Bootstrap and Jinja templating.",
   },
   {
-    id: 7,
+    id: 8,
     img: [mailtrap, mailtrap2, mailtrap3],
     url: null,
     github: 'https://github.com/rimuyamaura/mailtrap-auth',
@@ -112,7 +123,7 @@ export const projects: Project[] = [
     text: 'Email authentication practice using mailtrap. Users can register to receive an email containing a verification code which is then inputted into the site for access to the dashboard. Password reset is also done via an email where users can enter their email associated with their account to get a change password link. **This app is using the Mailtrap free tier and demo domain which only allows emails to be sent to yourself.',
   },
   {
-    id: 8,
+    id: 9,
     img: [oldPortfolio, oldPortfolio2],
     url: 'https://rimuyamaura-v1.netlify.app',
     github: 'https://github.com/rimuyamaura/rimuyamaura-portfolio',
